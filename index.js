@@ -1,7 +1,7 @@
 // import AppExpress from '@itznotabug/appexpress';
 import router from './src/router.js';
 import express from 'express';
-import dotenv from './node_modules/dotenv'
+import dotenv from 'dotenv'
 
 dotenv.config();
 
