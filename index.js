@@ -1,6 +1,6 @@
-import dotenv from './node_modules/dotenv'
-import AppExpress from '@itznotabug/appexpress';
-import router from './src/router.js';
+const dotenv = require('dotenv');
+const AppExpress = require('@itznotabug/appexpress');
+const router = require('./src/router.js');
 
 dotenv.config();
 
@@ -12,4 +12,7 @@ const getRoutes = (request, response) => {
   response.json({ routes: ["Hello"] });
 };
 
-app.get("/",getRoutes);
+app.get("/", getRoutes);
+
+// Export the app if needed
+module.exports = app;

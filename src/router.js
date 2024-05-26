@@ -1,8 +1,8 @@
-import AppExpress from '@itznotabug/appexpress';
-import { ID } from 'node-appwrite';
-import { databases,account } from './appwrite';
+const express = require('@itznotabug/appexpress');
+const { databases, account } = require('./appwrite');
+const { ID } = require('node-appwrite');
 
-const router = AppExpress.Router();
+const router = express.Router();
 
 // Register User
 router.post('/register', async (req, res) => {
@@ -45,4 +45,4 @@ router.post('/login', async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;
