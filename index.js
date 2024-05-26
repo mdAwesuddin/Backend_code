@@ -1,11 +1,11 @@
-const express = require('@itznotabug/appexpress');
-const dotenv = require('dotenv');
-const router = require('./src/router');
+import AppExpress from '@itznotabug/appexpress';
+import router from './src/router'
+import dotenv from './node_modules/dotenv'
 
 dotenv.config();
 
-const app = express();
-app.use(express.json());
+const app = AppExpress();
+app.use(AppExpress.json());
 app.use('/users', router);
 
 const getRoutes = (request, response) => {
