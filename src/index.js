@@ -1,7 +1,6 @@
 import router from './router.js';
 import express from 'express';
 import dotenv from 'dotenv'
-import AppExpress from "@itznotabug/appexpress";
 
 dotenv.config();
 const app2 =new AppExpress();
@@ -15,4 +14,7 @@ const getRoutes = (request, response) => {
 
 app.get("/",getRoutes);
 
-export default async (context) => await app2.attach(context);
+export default async (req, res) => {
+  // Wrap the Express app to handle the request and response
+  app(req, res);
+};
