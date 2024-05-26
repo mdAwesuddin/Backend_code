@@ -14,8 +14,8 @@ router.post('/register', async (req, res) => {
 console.log(user.password)
     // Add user to the database collection
     await databases.createDocument(
-      process.env.APPWRITE_DATABASE_ID, 
-      process.env.APPWRITE_COLLECTION_ID, 
+      '665079dc001f73527058', 
+      '665079f3002b9a6aabb1', 
       ID.unique(), 
       {
         userId: user.$id,
