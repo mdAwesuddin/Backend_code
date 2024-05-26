@@ -1,4 +1,3 @@
-// import AppExpress from '@itznotabug/appexpress';
 import router from './router.js';
 import express from 'express';
 import dotenv from 'dotenv'

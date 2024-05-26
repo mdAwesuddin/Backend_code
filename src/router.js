@@ -5,7 +5,6 @@ import express from 'express';
 
 const router =express.Router();
 
-// Register User
 router.post('/register', async (req, res) => {
   const { email, password, name } = req.body;
 
