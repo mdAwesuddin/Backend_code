@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('@itznotabug/appexpress');
 const { databases, account } = require('./appwrite');
 const { ID } = require('node-appwrite');
 

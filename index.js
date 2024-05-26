@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('@itznotabug/appexpress');
 const dotenv = require('dotenv');
 const router = require('./src/router');
 
@@ -8,7 +8,8 @@ const app = express();
 app.use(express.json());
 app.use('/users', router);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+const getRoutes = (request, response) => {
+  response.json({ routes: ["Hello"] });
+};
+
+app.get("/",getRoutes);
