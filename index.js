@@ -9,9 +9,5 @@ app.use('/users', router);
 const getRoutes = (request, response) => {
   response.json({ routes: ["Hello"] });
 };
-function userFunction() {
-  console.log("User function called");
-}
 
-userFunction();
 app.get("/",getRoutes);
