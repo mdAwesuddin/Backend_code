@@ -1,6 +1,6 @@
 import AppExpress from '@itznotabug/appexpress';
 import { ID } from 'node-appwrite';
-import { databases,account } from './appwrite';
+import { databases,account } from './appwrite.js';
 
 const router =new AppExpress.Router();
 
