@@ -7,7 +7,7 @@ app.use(express.json());
 app.use('/users', router);
 
 const getRoutes = (request, response) => {
-  response.json({ routes: ["Hello"] });
+  response.json('hello');
 };
 
 app.get("/",getRoutes);
