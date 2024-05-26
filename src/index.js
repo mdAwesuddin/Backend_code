@@ -15,4 +15,6 @@ const getRoutes = (request, response) => {
 
 app.get("/",getRoutes);
 
-export default async (context) => await app.attach(context);
+export default async (req, res) => {
+  app(req, res);
+};
