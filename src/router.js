@@ -2,7 +2,7 @@ import AppExpress from '@itznotabug/appexpress';
 import { ID } from 'node-appwrite';
 import { databases,account } from './appwrite';
 
-const router = AppExpress.Router();
+const router =new AppExpress.Router();
 
 // Register User
 router.post('/register', async (req, res) => {
