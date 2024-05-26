@@ -1,9 +1,9 @@
-import AppExpress from '@itznotabug/appexpress';
+// import AppExpress from '@itznotabug/appexpress';
 import router from './src/router.js';
+import express from 'express';
 
-
-const app = new AppExpress();
-
+const app = express();
+app.use(express.json());
 app.use('/users', router);
 
 const getRoutes = (request, response) => {
