@@ -1,7 +1,5 @@
-import dotenv from './node_modules/dotenv'
 import { Client,Databases, Account } from 'node-appwrite';
 
-dotenv.config();
 
 const client = new Client();
 client
