@@ -21,7 +21,7 @@ console.log(user.password)
         userId: user.$id,
         email: user.email,
         name: user.name,
-        password: password // Store password in plaintext (not recommended)
+        password: password 
       }
     );
 

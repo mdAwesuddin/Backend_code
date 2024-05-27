@@ -14,10 +14,5 @@ const getRoutes = (request, response) => {
 app.get("/",getRoutes);
 
 export default async (req, res) => {
-  // Wrap the Express app to handle the request and response
-  const server = app.listen(0); 
-
-  server.emit('request', req, res);
-
-  server.close();
+  app(req, res);
 };
