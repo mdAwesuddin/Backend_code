@@ -5,7 +5,7 @@ import express from 'express';
 
 const router =express.Router();
 
-router.post('/register', async (req, res) => {
+const postUser =async (req, res) => {
   const { email, password, name } = req.body;
 
   try {
@@ -29,10 +29,10 @@ console.log(user.password)
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-});
+};
 
 // Login User
-router.post('/login', async (req, res) => {
+const getUser = async(req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -43,6 +43,8 @@ router.post('/login', async (req, res) => {
   } catch (error) {
     res.status(401).json({ error: 'Invalid credentials' });
   }
-});
+};
+router.post('/register', postUser);
+router.post('/login', getUser);
 
 export default router;
