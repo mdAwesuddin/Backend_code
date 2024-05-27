@@ -1,10 +1,12 @@
 import router from './router.js';
-import express from 'express';
+// import express from 'express';
 import dotenv from 'dotenv'
+import AppExpress from "@itznotabug/appexpress";
+const app = new AppExpress();
 
 dotenv.config();
-const app = express();
-app.use(express.json());
+// const app = express();
+// app.use(express.json());
 app.use('/users', router);
 
 const getRoutes = (request, response) => {
@@ -13,6 +15,4 @@ const getRoutes = (request, response) => {
 
 app.get("/",getRoutes);
 
-export default async (req, res) => {
-  app(req, res);
-};
+export default async (context) => await app.attach(context);

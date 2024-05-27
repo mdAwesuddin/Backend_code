@@ -1,9 +1,11 @@
 // import AppExpress from '@itznotabug/appexpress';
 import { ID } from 'node-appwrite';
 import { databases,account } from './appwrite.js';
-import express from 'express';
+// import express from 'express';
+import AppExpress from "@itznotabug/appexpress";
 
-const router =express.Router();
+// const router =express.Router();
+const router = new AppExpress.Router();
 
 const postUser =async (req, res) => {
   const { email, password, name } = req.body;
