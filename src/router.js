@@ -57,7 +57,7 @@ const getUser = async (req, res) => {
     }
 
     // Create a session for the user
-    // const session = await account.createEmailPasswordSession(email, password);
+    const session = await account.createEmailPasswordSession(email, password);
     const result = await account.createJWT();
 
     res.json({ result });
