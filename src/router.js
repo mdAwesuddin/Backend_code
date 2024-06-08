@@ -1,5 +1,5 @@
 // import AppExpress from '@itznotabug/appexpress';
-import { ID } from 'node-appwrite';
+import { ID,Query } from 'node-appwrite';
 import { databases,account } from './appwrite.js';
 // import express from 'express';
 import AppExpress from "@itznotabug/appexpress";
@@ -42,7 +42,7 @@ const getUser = async (req, res) => {
     const query = await databases.listDocuments(
       process.env.APPWRITE_DATABASE_ID,
       process.env.APPWRITE_COLLECTION_ID,
-      [`email=${email}`]
+      [Query.equal('email', email)]
     );
 
     if (query.documents.length === 0) {
