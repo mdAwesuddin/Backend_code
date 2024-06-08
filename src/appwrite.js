@@ -1,5 +1,5 @@
 import dotenv from 'dotenv'
-import { Client,Databases, Account, Users } from 'node-appwrite';
+import { Client,Databases, Account } from 'node-appwrite';
 dotenv.config();
 
 const client = new Client();
@@ -10,6 +10,5 @@ client
 
 const databases = new Databases(client);
 const account = new Account(client);
-const users = new Users(client);
 
-export { client, databases, account, users };
+export { client, databases, account };
