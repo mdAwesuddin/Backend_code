@@ -1,6 +1,6 @@
 // import AppExpress from '@itznotabug/appexpress';
 import { ID,Query } from 'node-appwrite';
-import { databases,account } from './appwrite.js';
+import { databases,account,users } from './appwrite.js';
 // import express from 'express';
 import AppExpress from "@itznotabug/appexpress";
 
@@ -57,7 +57,8 @@ const getUser = async (req, res) => {
     }
 
     // Create a session for the user
-    const session = await account.createEmailPasswordSession(email, password);
+    // const session = await account.createEmailPasswordSession(email, password);
+    const session = await users.createToken(userDocument.$id);
 
     res.json({ session });
   } catch (error) {
