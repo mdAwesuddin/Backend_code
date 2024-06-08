@@ -58,8 +58,9 @@ const getUser = async (req, res) => {
 
     // Create a session for the user
     const session = await account.createEmailToken(userDocument.$id, email);
+    const result = await account.createJWT();
 
-    res.json({ session });
+    res.json({ session },{result});
   } catch (error) {
     res.json({ error: error.message },500);
   }
