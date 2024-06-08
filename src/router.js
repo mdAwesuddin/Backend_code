@@ -38,7 +38,6 @@ const getUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    // Fetch user document from the database using the email
     const query = await databases.listDocuments(
       process.env.APPWRITE_DATABASE_ID,
       process.env.APPWRITE_COLLECTION_ID,
@@ -51,12 +50,10 @@ const getUser = async (req, res) => {
 
     const userDocument = query.documents[0];
 
-    // Check if the provided password matches the stored password
     if (userDocument.password !== password) {
       return res.json({ error: 'Invalid Password' },401);
     }
 
-    // Create a session for the user
     const session = await account.createEmailPasswordSession(email, password);
 
     res.json({ session });
