@@ -57,7 +57,7 @@ const getUser = async (req, res) => {
     }
 
     // Create a session for the user
-    const session = await account.createSession(userDocument.user.$id,email);
+    const session = await account.createSession(userDocument.$id,email);
 
     res.json({ session });
   } catch (error) {
