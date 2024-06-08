@@ -46,14 +46,14 @@ const getUser = async (req, res) => {
     );
 
     if (query.documents.length === 0) {
-      return res.status(401).json({ error: 'Invalid credentials' });
+      return res.json({ error: 'Invalid credentials' },401);
     }
 
     const userDocument = query.documents[0];
 
     // Check if the provided password matches the stored password
     if (userDocument.password !== password) {
-      return res.status(401).json({ error: 'Invalid credentials' });
+      return res.json({ error: 'Invalid Password' },401);
     }
 
     // Create a session for the user
@@ -61,7 +61,7 @@ const getUser = async (req, res) => {
 
     res.json({ session });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.json({ error: error.message },500);
   }
 };
 
