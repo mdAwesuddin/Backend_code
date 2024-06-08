@@ -57,7 +57,7 @@ const getUser = async (req, res) => {
     }
 
     // Create a session for the user
-    const session = await account.createEmailSession(email, password);
+    const session = await account.createSession(email, password);
 
     res.json({ session });
   } catch (error) {
